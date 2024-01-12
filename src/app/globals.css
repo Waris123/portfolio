@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  body {
+    @apply p-8 bg-gray-100 text-gray-700;
+  }
+}
+
+@layer components {
+  section {
+    @apply mx-auto;
+  }
+  section > div {
+    @apply p-8 rounded-lg;
+  }
+  h3 {
+    @apply font-bold text-2xl;
+  }
+  p {
+    @apply mt-4 opacity-70;
+  }
+  .violet {
+    @apply bg-indigo-600 text-white;
+  }
+  .gray {
+    @apply bg-gray-600 text-white;
+  }
+  .white, .white-long {
+    background-color: rgb(179, 213, 238);
+  }
+  .dark {
+    @apply bg-gray-900 text-white;
+  }
+
+  i.fas {
+    @apply text-[#d79491] text-5xl mt-2;
+  }
+  .service-body {
+    @apply ml-6;
+  }
+}
